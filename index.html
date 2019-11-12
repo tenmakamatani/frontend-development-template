@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:locale" content="ja_JP" />
+    <link rel="shortcut icon" sizes="16x16" href="">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="item/css/style.css">
+</head>
+<body>
+<div class="search-icon">
+    <img class="search" src="item/img/search.png" alt=""/>
+    <img class="close" src="item/img/close.png" alt=""/>
+</div>
+<form class="search-form" action="">
+    <ul>
+        <li>
+            Keyword
+            <input type="text" placeholder="keyword">
+        </li>
+        <li class="language">
+            Language
+            <div class="md-radio">
+                <input id="1" type="radio" name="g" checked>
+                <label for="1">日本語</label>
+                <input id="2" type="radio" name="g">
+                <label for="2">English</label>
+            </div>
+        </li>
+        <li>
+            Tags
+            <ul class="tag-list">
+                <li><input id="tag01" type="checkbox"><label for="tag01">渋谷ハロウィン</label></li>
+                <li><input id="tag02" type="checkbox"><label for="tag02">2019 東京オリンピック</label></li>
+                <li><input id="tag03" type="checkbox"><label for="tag03">筑波会議</label></li>
+            </ul>
+        </li>
+    </ul>
+</form>
+<div class="map">
+</div>
+<ul class="pin-box">
+    <li class="pin">
+        <img src="/item/img/pin.png" alt="">
+        <div class="ttl"><a href="#pin01" rel="modal:open">乗る番線について</a></div>
+    </li>
+</ul>
+<div id="pin01" class="modal">
+    <h2>乗る番線について</h2>
+    <ul class="tag-list">
+        <li>渋谷ハロウィン</li>
+        <li>渋谷ハロウィン</li>
+    </ul>
+    <p class="comment">
+        ここでは、2番線と3番線を間違いやすいですが、乗りたい列車である
+        ここでは、2番線と3番線を間違いやすいですが、乗りたい列車であるここでは、2番線と3番線を間違いやすいですが、乗りたい列車である。
+    </p>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script><!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<script>
+    $('.search-icon').click(function(){
+        $(this).toggleClass('clicked');
+    });
+    $('.pin').click(function(){
+        $(this).toggleClass('clicked');
+    });
+</script>
+</body>
+</html>

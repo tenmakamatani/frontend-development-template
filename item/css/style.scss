@@ -1,0 +1,318 @@
+/*------------------
+ ブレイクポイント設定
+------------------*/
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+/* pc */
+$pc-max: 1024px;
+$pc-min: 1025px;
+/* tb */
+$tb-max: 959px;
+$tb-min: 960px;
+/* sp */
+$sp-max: 559px;
+$sp-min: 560px;
+
+h2 {font-size: 1.50rem;font-weight: bold;}
+h3 {font-size: 1.25rem;font-weight: bold;}
+h4 {font-size: 1.00rem;font-weight: bold;}
+h5 {font-size: 0.75rem;font-weight: bold;}
+p  {font-size: 1.00rem;font-weight: normal;}
+
+
+input::placeholder {
+  color: #ddd;
+}
+  // IE
+input:-ms-input-placeholder {
+  color: #ddd;
+}
+
+  // Edge
+input::-ms-input-placeholder {
+  color: #ddd;
+}
+
+/*------------------
+ フォーム設定
+------------------*/
+
+form {
+  padding-top: 0;
+  ul {
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 400px;
+    li {
+      margin: 20px 0;
+      font-size: 1rem;
+    }
+  }
+  input[type="text"] {
+    font-size: 1rem;
+    margin-top: 10px;
+    padding: 5px 15px;
+    width: calc(100% - 40px);
+    appearance: none;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+    outline: none;
+    display: block;
+
+  }
+}
+
+/*------------------
+ ラジオボタン
+------------------*/
+
+$md-radio-checked-color: rgb(51, 122, 183);
+$md-radio-border-color: rgba(0, 0, 0, 0.54);
+$md-radio-size: 16px;
+$md-radio-checked-size: 10px;
+$md-radio-ripple-size: 10px;
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.0);
+  }
+  50% {
+    box-shadow: 0 0 0 $md-radio-ripple-size rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 $md-radio-ripple-size rgba(0, 0, 0, 0);
+  }
+}
+
+.md-radio {
+  &.md-radio-inline {
+    display: inline-block;
+  }
+
+  input[type="radio"] {
+    display: none;
+    &:checked + label:before {
+      border-color: $md-radio-checked-color;
+      animation: ripple 0.2s linear forwards;
+    }
+    &:checked + label:after {
+      transform: scale(1);
+    }
+  }
+
+  label {
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    padding: 0 16px 0 ($md-radio-size + 8px);
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: bottom;
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      transition: all .3s ease;
+      transition-property: transform, border-color;
+    }
+    &:before {
+      left: 0;
+      top: 0;
+      width: $md-radio-size;
+      height: $md-radio-size;
+      border: 2px solid $md-radio-border-color;
+    }
+    &:after {
+      margin: auto 0;
+      top: 5px;
+      left: 5px;
+      width:$md-radio-checked-size;
+      height:$md-radio-checked-size;
+      transform: scale(0);
+      background:$md-radio-checked-color;
+    }
+  }
+}
+
+/*------------------
+ マップ画面
+------------------*/
+
+.map {
+  background-image: url("/item/img/map.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.pin-box {
+  >.pin {
+    display: block;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    transition: .3s;
+    &.clicked {
+      transform: scale(1.2);
+    }
+
+    .ttl {
+      word-break: keep-all;
+      position: absolute;
+      left: 35px;
+      top: 10px;
+      width: 0;
+      opacity: 0;
+      &:before {
+        transition: .3s;
+        opacity: 0;
+        z-index: 10;
+        position: absolute;
+        left: -7px;
+        top: 0;
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #fff transparent transparent;
+      }
+      a {
+        background-color: white;
+        padding: 10px;
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+        border-radius: 5px;
+        font-size: 0.5rem;
+        color: blue;
+      }
+    }
+    &.clicked {
+      img {
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+      }
+      .ttl {
+        width: initial;
+        opacity: 1;
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+/*------------------
+ モーダル
+------------------*/
+
+.modal {
+  padding: 20px!important;
+  >h2 {
+    font-weight: normal;
+  }
+  .tag-list {
+    padding: 5px 0 10px 0;
+    border-bottom: 1px solid #cccccc;
+    li {
+      font-size: 0.75rem;
+      display: inline-block;
+      background-color: #4d74ff;
+      color: white;
+      border-radius: 2px;
+      padding: 5px 8px;
+    }
+  }
+  >.comment {
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+}
+
+.blocker {
+  background-color: rgba(0,0,0,0.5) !important;
+}
+.modal {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/*------------------
+ 検索画面
+------------------*/
+.search-icon {
+  z-index: 30;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  >img {
+  }
+  >.search {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+    display: block;
+  }
+  >.close {
+    display: none;
+  }
+  &.clicked {
+    >.search {
+      display: none;
+    }
+    >.close {
+      display: block;
+    }
+  }
+}
+
+.search-form {
+  font-size: 1rem;
+  overflow: hidden;
+  transition: .3s;
+  border-radius: 100px;
+  background-color: white;
+  z-index: 20;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  >ul >li:last-child {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DDDDDD;
+  }
+  >ul li >.md-radio {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+  >ul li >.tag-list {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    li {
+      margin: 10px 10px 0 0;
+      input {
+        display: none;
+        &:checked + label {
+          background-color: #4d74ff;
+          color: white;
+        }
+      }
+      label {
+        font-size: 0.75rem;
+        display: inline-block;
+        background-color: #ddd;
+        color: black;
+        border-radius: 2px;
+        padding: 5px 8px;
+      }
+    }
+  }
+}
+.search-icon.clicked + .search-form {
+  padding-top: 60px;
+  border-radius: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+}
