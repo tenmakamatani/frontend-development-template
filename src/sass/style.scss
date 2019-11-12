@@ -138,7 +138,7 @@ $md-radio-ripple-size: 10px;
 ------------------*/
 
 .map {
-  background-image: url("/item/img/map.png");
+  background-image: url("../img/map.png");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -243,8 +243,6 @@ $md-radio-ripple-size: 10px;
   position: fixed;
   top: 20px;
   right: 20px;
-  >img {
-  }
   >.search {
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
     display: block;
